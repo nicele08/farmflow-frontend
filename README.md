@@ -29,10 +29,10 @@ To get started with the Farmer Ordering System, follow these steps:
  yarn install
 ```
 
-3. Create a `.env` file in the root directory of the project and add the following environment variables:
+3. Create a `.env.local` file in the root directory of the project and add the following environment variables:
 
    ```shell
-   REACT_APP_API_URL="http://localhost:4000/api"
+   REACT_APP_API_URL="http://localhost:[BACKEND_PORT]/api"
    ```
 
 4. Start the server:
