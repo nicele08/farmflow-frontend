@@ -13,6 +13,9 @@ import { ToastContainer } from 'react-toastify';
 import RegisterPage from './pages/RegisterPage';
 import 'react-toastify/dist/ReactToastify.css';
 import LogoutPage from './pages/LogoutPage';
+import ShopPage from './pages/ShopPage';
+import OrderPage from './pages/OrderPage';
+import HomePage from './pages/HomePage';
 
 const user = getUserData();
 
@@ -30,11 +33,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <div>Home</div>,
+        element: <HomePage />,
       },
       {
         path: 'logout',
         element: <LogoutPage />,
+      },
+      {
+        path: 'shop',
+        element: <ShopPage />,
+      },
+      {
+        path: '/orders',
+        element: <OrderPage />,
       },
     ],
   },

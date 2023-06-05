@@ -66,6 +66,9 @@ const Layout = () => {
                 </svg>
               </button>
               <Logo to="/" className="flex ml-2 md:mr-24" />
+              <h1 className="hidden md:block text-xl font-semibold tracking-wide">
+                Hi {name}👋
+              </h1>
             </div>
             <div className="flex space-x-2 md:space-x-4 items-center">
               <Avatar />
@@ -161,7 +164,7 @@ const Layout = () => {
       </aside>
 
       <div className="p-4 py-20 sm:ml-64 flex flex-col">
-        <h1 className="text-xl font-semibold tracking-wide mb-4">
+        <h1 className="md:hidden text-xl font-semibold tracking-wide mb-4">
           Welcome {name}!
         </h1>
         <Outlet />

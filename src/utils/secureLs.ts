@@ -1,6 +1,7 @@
 import SecureLS from 'secure-ls';
 import { keys } from './constants';
 import { User } from '@/types/auth.type';
+import { Product } from '@/types/product.type';
 
 const ls = new SecureLS({ encodingType: 'aes' });
 
@@ -51,6 +52,22 @@ const removeToken = () => {
   ls.remove(keys.ACCESS_TOKEN);
 };
 
+const getCart = () => {
+  try {
+    return (ls.get(keys.CART_KEY) as Product[]) || [];
+  } catch (error) {
+    return [];
+  }
+};
+
+const setCart = (cart: Product[]) => {
+  ls.set(keys.CART_KEY, cart);
+};
+
+const clearCart = () => {
+  ls.remove(keys.CART_KEY);
+};
+
 const Secure = {
   ls,
   setToken,
@@ -61,6 +78,9 @@ const Secure = {
   setTheme,
   getTheme,
   removeAll,
+  setCart,
+  getCart,
+  clearCart,
 };
 
 export default Secure;
